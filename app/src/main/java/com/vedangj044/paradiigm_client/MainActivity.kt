@@ -1,5 +1,6 @@
 package com.vedangj044.paradiigm_client
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var basicInfoViewModel: BasicInfoViewModel
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,13 @@ class MainActivity : AppCompatActivity() {
                 binding.scoreboardRecycler.adapter = ScoreClassAdapter(value.history)
             }
         })
+
+        binding.profilePic.setOnClickListener {
+
+            val pf = ProfileFragment()
+            supportFragmentManager.beginTransaction().replace(android.R.id.content, pf, "PROFILE").addToBackStack("profile").commit()
+
+        }
 
     }
 

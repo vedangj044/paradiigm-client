@@ -9,6 +9,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.vedangj044.paradiigm_client.models.QuestionList
 
 @BindingAdapter("setWelcomeText")
 fun TextView.setWelcomeText(string: String?) {
@@ -32,6 +33,16 @@ fun Button.isEnrolled(enrolled: Boolean) {
     }
     else {
         text = "Enroll"
+    }
+}
+
+@BindingAdapter("isCorrect")
+fun TextView.setCorrect(tr: Int) {
+    if (tr == 1){
+        text = "Correct"
+    }
+    else{
+        text = "Wrong"
     }
 }
 

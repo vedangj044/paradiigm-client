@@ -46,7 +46,7 @@
                 app:layout_constraintStart_toEndOf="@+id/view"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/course_name_score"
                 style="@style/TextAppearance.MdcTypographyStyles.Headline6"
                 android:layout_width="0dp"
@@ -56,7 +56,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/date"
                 style="@style/TextAppearance.MdcTypographyStyles.Body2"
                 android:layout_width="0dp"
@@ -67,7 +67,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/course_name_score" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView8"
                 style="@style/TextAppearance.MdcTypographyStyles.Caption"
                 android:layout_width="0dp"
@@ -79,7 +79,7 @@
                 app:layout_constraintStart_toEndOf="@+id/view"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/rank"
                 style="@style/TextAppearance.MdcTypographyStyles.Headline6"
                 android:layout_width="0dp"
@@ -91,7 +91,7 @@
                 app:layout_constraintStart_toEndOf="@+id/view"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textView10"
                 style="@style/TextAppearance.MdcTypographyStyles.Caption"
                 android:layout_width="0dp"
@@ -103,7 +103,7 @@
                 app:layout_constraintStart_toEndOf="@+id/view2"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/score"
                 style="@style/TextAppearance.MdcTypographyStyles.Headline6"
                 android:layout_width="wrap_content"

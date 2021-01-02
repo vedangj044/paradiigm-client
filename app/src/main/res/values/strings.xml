@@ -6,4 +6,15 @@
     <string name="rank">Rank</string>
     <string name="score">Score</string>
     <string name="profile_picture">Profile picture</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="date">Date</string>
+    <string name="tick">tick</string>
+    <string name="none_of_the_above">None of the above</string>
+    <string name="_1">1.</string>
+    <string name="_2">2.</string>
+    <string name="_3">3.</string>
+    <string name="_4">4.</string>
+    <string name="your_answer">Your answer:</string>
+    <string name="q">Q.</string>
 </resources>
