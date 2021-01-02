@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">paradiigm-client</string>
+    <string name="paradigm">Paradigm</string>
+    <string name="active_classes">Active Classes</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="rank">Rank</string>
+    <string name="score">Score</string>
+    <string name="profile_picture">Profile picture</string>
+</resources>
