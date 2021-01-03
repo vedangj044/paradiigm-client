@@ -17,7 +17,7 @@ class TestReviewViewModel(private val  basicInfoApiService: Retrofit, private va
         getData()
     }
 
-    fun getData() {
+    private fun getData() {
 
         viewModelScope.launch {
             val resp = basicInfoApiService.create(BasicInfoApiService::class.java).getTestReview(studentID, classId)
