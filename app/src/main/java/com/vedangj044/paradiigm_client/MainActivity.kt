@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.vedangj044.paradiigm_client.databinding.ActivityMainBinding
+import com.vedangj044.paradiigm_client.models.Active
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var basicInfoViewModel: BasicInfoViewModel
     private lateinit var binding: ActivityMainBinding
     private lateinit var scoreAdapter: ScoreClassAdapter
+    private lateinit var activeAdapter: ActiveClassAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +32,12 @@ class MainActivity : AppCompatActivity() {
             value ->
             run {
                 binding.basic = value
-                binding.activeRecycler.adapter = ActiveClassAdapter(value.active)
+
+                activeAdapter = ActiveClassAdapter(value.active) {
+                    item: Active, pos: Int -> basicInfoViewModel.enrollTrigger(item.class_id, pos)
+                }
+                binding.activeRecycler.adapter = activeAdapter
+
                 scoreAdapter = ScoreClassAdapter(value.history){
                     val hf = TestReviewFragment(it.classID)
                     supportFragmentManager.beginTransaction().replace(android.R.id.content, hf, "Test Review").addToBackStack("review").commit()

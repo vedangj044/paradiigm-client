@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vedangj044.paradiigm_client.databinding.LayoutActiveItemBinding
 import com.vedangj044.paradiigm_client.models.Active
 
-class ActiveClassAdapter(private val dataset: List<Active>): RecyclerView.Adapter<ActiveClassAdapter.ViewHolder>() {
+class ActiveClassAdapter(private val dataset: List<Active>, val clickLis: (Active, Int) -> Unit): RecyclerView.Adapter<ActiveClassAdapter.ViewHolder>() {
 
     class ViewHolder(private val view: LayoutActiveItemBinding): RecyclerView.ViewHolder(view.root) {
 
@@ -25,8 +25,10 @@ class ActiveClassAdapter(private val dataset: List<Active>): RecyclerView.Adapte
         return dataset.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ActiveClassAdapter.ViewHolder, position: Int) {
         dataset.get(position).let { holder.bind(it) }
+
+
     }
 
 }

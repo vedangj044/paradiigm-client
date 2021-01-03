@@ -3,6 +3,7 @@ package com.vedangj044.paradiigm_client
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.vedangj044.paradiigm_client.models.BasicInfo
+import com.vedangj044.paradiigm_client.models.Enroll
 import com.vedangj044.paradiigm_client.models.QuestionTest
 import com.vedangj044.paradiigm_client.models.TestReview
 import retrofit2.Response
@@ -25,6 +26,10 @@ interface BasicInfoApiService {
     @Headers("Accept: application/json")
     @GET("lastquestion")
     suspend fun getLastQuestion(@Query("classID") classID: Int): Response<QuestionTest>
+
+    @Headers("Accept: application/json")
+    @GET("enrollclass")
+    suspend fun getEnrollment(@Query("studntID") studentID: Int, @Query("classID") classID: Int): Response<Enroll>
 
     companion object{
 
