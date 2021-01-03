@@ -1,13 +1,16 @@
 package com.vedangj044.paradiigm_client
 
+import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.vedangj044.paradiigm_client.databinding.LayoutScoreItemBinding
 import com.vedangj044.paradiigm_client.models.Active
 import com.vedangj044.paradiigm_client.models.History
 
-class ScoreClassAdapter(private val dataset: List<History>): RecyclerView.Adapter<ScoreClassAdapter.ViewHolder>() {
+class ScoreClassAdapter(private val dataset: List<History>, val btnlistener: (History) -> Unit): RecyclerView.Adapter<ScoreClassAdapter.ViewHolder>() {
 
     class ViewHolder(private val view: LayoutScoreItemBinding): RecyclerView.ViewHolder(view.root) {
 
@@ -29,6 +32,10 @@ class ScoreClassAdapter(private val dataset: List<History>): RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: ScoreClassAdapter.ViewHolder, position: Int) {
         dataset.get(position).let { holder.bind(it) }
+
+        holder.itemView.setOnClickListener {
+            btnlistener(dataset.get(position))
+        }
     }
 
 }

@@ -8,5 +8,7 @@ data class QuestionList (
 	@Json(name = "option") val option : List<String>,
 	@Json(name = "correctOption") val correctOption : Int,
 	@Json(name = "questionType") val questionType : Int,
-	@Json(name = "response") val response : Int
+	@Json(name = "response") val response : Int,
+	@Json(name = "correctTF") val correctTF: Int
+
 )

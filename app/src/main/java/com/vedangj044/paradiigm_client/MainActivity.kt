@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var basicInfoViewModel: BasicInfoViewModel
     private lateinit var binding: ActivityMainBinding
-
+    private lateinit var scoreAdapter: ScoreClassAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,12 @@ class MainActivity : AppCompatActivity() {
             run {
                 binding.basic = value
                 binding.activeRecycler.adapter = ActiveClassAdapter(value.active)
-                binding.scoreboardRecycler.adapter = ScoreClassAdapter(value.history)
+                scoreAdapter = ScoreClassAdapter(value.history){
+                    val hf = TestReviewFragment(it.classID)
+                    supportFragmentManager.beginTransaction().replace(android.R.id.content, hf, "Test Review").addToBackStack("review").commit()
+                }
+                binding.scoreboardRecycler.adapter = scoreAdapter
+
             }
         })
 
@@ -41,6 +46,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(android.R.id.content, pf, "PROFILE").addToBackStack("profile").commit()
 
         }
+
 
     }
 

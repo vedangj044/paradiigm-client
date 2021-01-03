@@ -17,4 +17,6 @@
     <string name="_4">4.</string>
     <string name="your_answer">Your answer:</string>
     <string name="q">Q.</string>
+    <string name="true1">True</string>
+    <string name="false1">False</string>
 </resources>

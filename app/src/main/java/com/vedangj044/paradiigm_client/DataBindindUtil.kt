@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.vedangj044.paradiigm_client.models.QuestionList
+import com.vedangj044.paradiigm_client.models.TestReview
 
 @BindingAdapter("setWelcomeText")
 fun TextView.setWelcomeText(string: String?) {
@@ -43,6 +44,13 @@ fun TextView.setCorrect(tr: Int) {
     }
     else{
         text = "Wrong"
+    }
+}
+
+@BindingAdapter("setScore")
+fun TextView.setScore(tr: TestReview?){
+    if (tr != null) {
+        text = tr.score.toString() + "/" +tr.questionList.size.toString()
     }
 }
 
