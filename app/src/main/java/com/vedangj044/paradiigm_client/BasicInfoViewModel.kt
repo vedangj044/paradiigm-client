@@ -32,9 +32,10 @@ class BasicInfoViewModel(private val basicInfoApiService: Retrofit): ViewModel()
 
         viewModelScope.launch {
             val resp = basicInfoApiService.create(BasicInfoApiService::class.java).getEnrollment(studentID, classID)
+            getData()
         }
 
-        getData()
+
     }
 
 

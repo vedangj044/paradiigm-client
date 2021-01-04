@@ -1,6 +1,7 @@
 package com.vedangj044.paradiigm_client
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vedangj044.paradiigm_client.databinding.LayoutActiveItemBinding
@@ -10,8 +11,9 @@ class ActiveClassAdapter(private val dataset: List<Active>, val clickLis: (Activ
 
     class ViewHolder(private val view: LayoutActiveItemBinding): RecyclerView.ViewHolder(view.root) {
 
-        fun bind(active: Active){
+        fun bind(active: Active, listener: View.OnClickListener){
             view.itemBinding = active
+            view.enrollButton.setOnClickListener(listener)
         }
 
     }
@@ -26,9 +28,8 @@ class ActiveClassAdapter(private val dataset: List<Active>, val clickLis: (Activ
     }
 
     override fun onBindViewHolder(holder: ActiveClassAdapter.ViewHolder, position: Int) {
-        dataset.get(position).let { holder.bind(it) }
-
-
+        val listenr = View.OnClickListener { clickLis(dataset.get(position), position) }
+        dataset.get(position).let { holder.bind(it, listenr) }
     }
 
 }

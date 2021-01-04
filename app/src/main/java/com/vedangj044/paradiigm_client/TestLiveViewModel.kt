@@ -11,7 +11,14 @@ import retrofit2.Retrofit
 
 class TestLiveViewModel(private val  basicInfoApiService: Retrofit, private val classId: Int): ViewModel() {
 
-    val sendTest = MutableLiveData<QuestionTest>()
-    var dataSource: TestLiveDataSource = TestLiveDataSource(basicInfoApiService, classId)
+    val studentID = 1
 
+    val sendTest = MutableLiveData<QuestionTest>()
+    var dataSource: TestLiveDataSource = TestLiveDataSource(basicInfoApiService, classId, studentID)
+
+    fun submitResponse(questionID: Int, valid: Boolean) {
+        viewModelScope.launch {
+            val resp = basicInfoApiService.create(BasicInfoApiService::class.java).submitResponse(studentID, questionID, valid)
+        }
+    }
 }

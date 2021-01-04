@@ -34,7 +34,17 @@ class MainActivity : AppCompatActivity() {
                 binding.basic = value
 
                 activeAdapter = ActiveClassAdapter(value.active) {
-                    item: Active, pos: Int -> basicInfoViewModel.enrollTrigger(item.class_id, pos)
+                    item: Active, pos: Int ->
+                    run {
+                        if (item.isEnrolled){
+                            val tf = TestLiveFragment(item.class_id)
+                            supportFragmentManager.beginTransaction().replace(android.R.id.content, tf, "Test Live").addToBackStack("Live").commit()
+                        }
+                        else{
+                            basicInfoViewModel.enrollTrigger(item.class_id, pos)
+                        }
+
+                    }
                 }
                 binding.activeRecycler.adapter = activeAdapter
 

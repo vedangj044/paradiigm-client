@@ -24,12 +24,16 @@ interface BasicInfoApiService {
     suspend fun getTestReview(@Query("stundentID") studentID: Int, @Query("classID") classID: Int): Response<TestReview>
 
     @Headers("Accept: application/json")
-    @GET("lastquestion")
-    suspend fun getLastQuestion(@Query("classID") classID: Int): Response<QuestionTest>
+    @GET("getquestion")
+    suspend fun getLastQuestion(@Query("classID") classID: Int, @Query("studentID") studentID: Int): Response<QuestionTest>
 
     @Headers("Accept: application/json")
     @GET("enrollclass")
     suspend fun getEnrollment(@Query("studntID") studentID: Int, @Query("classID") classID: Int): Response<Enroll>
+
+    @Headers("Accept: application/json")
+    @GET("submitresponse")
+    suspend fun submitResponse(@Query("studentID") studentID: Int, @Query("questionID") questionID: Int, @Query("valid") valid: Boolean): Response<Enroll>
 
     companion object{
 
