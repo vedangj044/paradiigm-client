@@ -21,13 +21,22 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_sync_24" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/relativeLayout21"
@@ -50,10 +59,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:text="@{testQuestion.blank.blank}"
                         app:layout_constraintStart_toEndOf="@id/question_mark"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="___ is an operating system ?  is an operating system ?"
-                        android:text="@{testQuestion.blank.blank}"/>
+                        tools:text="___ is an operating system ?  is an operating system ?" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/option_1_test"
@@ -71,9 +80,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
+                        android:text="@{testQuestion.blank.option1}"
                         app:layout_constraintBaseline_toBaselineOf="@id/option_1_test"
-                        app:layout_constraintStart_toEndOf="@id/option_1_test"
-                        android:text="@{testQuestion.blank.option1}"/>
+                        app:layout_constraintStart_toEndOf="@id/option_1_test" />
 
                     <ImageView
                         android:id="@+id/option_1_check_test"
@@ -101,8 +110,8 @@
                         style="@style/TextAppearance.MdcTypographyStyles.Headline6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{testQuestion.blank.option2}"
                         android:layout_marginStart="5dp"
+                        android:text="@{testQuestion.blank.option2}"
                         app:layout_constraintBaseline_toBaselineOf="@id/option_2_test"
                         app:layout_constraintStart_toEndOf="@id/option_2_test" />
 
@@ -142,9 +151,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:visibility="gone"
                         android:contentDescription="@string/tick"
                         android:src="@drawable/ic_baseline_check_circle_24"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@id/option_3_test"
                         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -173,9 +182,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
-                        android:visibility="gone"
                         android:contentDescription="@string/tick"
                         android:src="@drawable/ic_baseline_check_circle_24"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@id/option_4_test"
                         app:layout_constraintEnd_toEndOf="parent" />
 
