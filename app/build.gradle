@@ -77,9 +77,12 @@ dependencies {
 
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-rc01"
 
-    implementation ('com.streamr:client:2.0.2'){
+    implementation ('com.streamr:client:2.0.1'){
         exclude group: 'org.iq80.leveldb', module: 'leveldb-api'
     }
+    implementation "org.cache2k:cache2k-api:1.2.4.Final"
+    implementation "org.cache2k:cache2k-base-bom:1.2.4.Final"
+    implementation "org.cache2k:cache2k-core:1.2.4.Final"
 
 
     // dataStore
