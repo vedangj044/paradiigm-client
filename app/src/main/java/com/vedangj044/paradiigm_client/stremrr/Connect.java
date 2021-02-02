@@ -5,6 +5,9 @@ import android.util.Log;
 import com.streamr.client.StreamrClient;
 import com.streamr.client.authentication.AuthenticationMethod;
 import com.streamr.client.authentication.EthereumAuthenticationMethod;
+import com.streamr.client.options.EncryptionOptions;
+import com.streamr.client.options.SigningOptions;
+import com.streamr.client.options.StreamrClientOptions;
 import com.streamr.client.rest.Stream;
 
 import java.io.IOException;
@@ -33,11 +36,16 @@ public class Connect {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                StreamrClient client = new StreamrClient(new EthereumAuthenticationMethod("0b834453cfd9bfa4eac2c73b15adcbdeffb9892c23f7e52d91e8f61af779ac4b"));
+                StreamrClientOptions options = new StreamrClientOptions(new EthereumAuthenticationMethod("aa139ebaac01f9f7684565b9f52ecec0ba80cd227f6a02e68403736d00f2daa3"), SigningOptions.getDefault(), EncryptionOptions.getDefault(), "wss://hack.streamr.network/api/v1/ws", "https://hack.streamr.network/api/v1");
+                StreamrClient client = new StreamrClient(options);
+
+                
+                Log.v("key", client.getSessionToken());
 
                 Stream stream = null;
                 try {
-                    stream = client.getStream(streamID);
+                    stream = client.getStreamByName(streamID);
+                    Log.v("mess", stream.getId() + stream.getDescription());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
