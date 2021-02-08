@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.vedangj044.paradiigm_client.databinding.LayoutTestQuestionBinding
-import com.vedangj044.paradiigm_client.stremrr.Connect
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -103,7 +102,6 @@ class TestLiveFragment(private val classID: Int): Fragment() {
 
                         testlive.submit.isClickable = false
 
-                        Connect.publish(20, 1, valf.blank.blank, valf.blank.option2, true, 0.34f);
                     }
                 }
             }

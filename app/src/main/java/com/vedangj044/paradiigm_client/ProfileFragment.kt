@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.vedangj044.paradiigm_client.databinding.ActivityMainBinding
 import com.vedangj044.paradiigm_client.databinding.LayoutProfileBinding
-import com.vedangj044.paradiigm_client.stremrr.StreamConfigFragment
 
 class ProfileFragment : Fragment() {
 
@@ -43,11 +42,6 @@ class ProfileFragment : Fragment() {
                 profile.profile = value.profile
             }
         })
-
-        profile.streamerButton.setOnClickListener {
-            val sf = StreamConfigFragment()
-            activity!!.supportFragmentManager.beginTransaction().replace(android.R.id.content, sf, "Config screen").addToBackStack("streamr settings").commit()
-        }
     }
 
 }
