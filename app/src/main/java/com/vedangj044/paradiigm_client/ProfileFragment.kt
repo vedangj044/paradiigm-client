@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.vedangj044.paradiigm_client.databinding.ActivityMainBinding
 import com.vedangj044.paradiigm_client.databinding.LayoutProfileBinding
 
-class ProfileFragment : Fragment() {
+class ProfileFragment(private val studentID: Int) : Fragment() {
 
     private lateinit var basicInfoViewModel: BasicInfoViewModel
     private lateinit var profile: LayoutProfileBinding
@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
 
         basicInfoViewModel = ViewModelProvider(
             this,
-            BasicInfoViewModelFactory(BasicInfoApiService.getApiService())
+            BasicInfoViewModelFactory(BasicInfoApiService.getApiService(), studentID)
         )[BasicInfoViewModel::class.java]
 
         basicInfoViewModel.sendObj.observe(this, Observer {

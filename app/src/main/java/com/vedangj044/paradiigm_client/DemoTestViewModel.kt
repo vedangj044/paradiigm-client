@@ -1,11 +1,15 @@
 package com.vedangj044.paradiigm_client
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.vedangj044.paradiigm_client.models.QuestionDemoList
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 
 class DemoTestViewModel(private val  basicInfoApiService: Retrofit, private val classId: Int, private val studentID: Int): ViewModel() {
+
+    val questions = MutableLiveData<QuestionDemoList>()
 
     fun submitResponse(questionID: Int, valid: Boolean) {
         viewModelScope.launch {
@@ -21,7 +25,7 @@ class DemoTestViewModel(private val  basicInfoApiService: Retrofit, private val 
 
     fun getQuestion() {
         viewModelScope.launch {
-            val resp = basicInfoApiService.create(BasicInfoApiService::class.java).getLastQuestion(classID = classId, studentID = studentID)
+            questions.value = basicInfoApiService.create(BasicInfoApiService::class.java).getLastQuestion(classID = classId, studentID = studentID).body()
         }
     }
 

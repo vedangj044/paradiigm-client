@@ -39,8 +39,8 @@ class TestLiveDataSource (private val basicInfoApiService: Retrofit, private val
 
     suspend fun getData(): QuestionTest? {
         try {
-            val resp = basicInfoApiService.create(BasicInfoApiService::class.java).getLastQuestion(classID, studentID)
-            return resp.body()
+            val resp = null
+            return resp
         }
         catch (e: Exception){
             return null

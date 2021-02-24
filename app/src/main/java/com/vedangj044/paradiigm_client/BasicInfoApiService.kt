@@ -3,6 +3,7 @@ package com.vedangj044.paradiigm_client
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.vedangj044.paradiigm_client.models.*
+import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -10,6 +11,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.Query
+import java.util.concurrent.TimeUnit
 
 
 interface BasicInfoApiService {
@@ -46,8 +48,14 @@ interface BasicInfoApiService {
             .add(KotlinJsonAdapterFactory())
             .build()
 
+        private val client = OkHttpClient().newBuilder()
+                .connectTimeout(100, TimeUnit.SECONDS)
+                .readTimeout(100, TimeUnit.SECONDS)
+                .writeTimeout(100, TimeUnit.SECONDS)
+                .build()
+
         fun getApiService() = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:8000/")
+            .baseUrl("http://168.63.210.246:8000/").client(client)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
     }

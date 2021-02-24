@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.profilePic.setOnClickListener {
 
-            val pf = ProfileFragment()
+            val pf = ProfileFragment(studentid)
             supportFragmentManager.beginTransaction().replace(android.R.id.content, pf, "PROFILE").addToBackStack("profile").commit()
 
         }

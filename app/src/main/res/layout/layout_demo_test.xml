@@ -7,51 +7,41 @@
     android:padding="16dp"
     android:background="@color/white_black">
 
-    <TextView
-        android:id="@+id/textView16"
-        style="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/demo_test"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/demo_video"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         app:autoPlay="true"
-        app:videoId="F1F2imiOJfk"
-        app:showFullScreenButton="false"
-        app:showVideoCurrentTime="true"
-        app:showYouTubeButton="true"
         app:layout_constraintDimensionRatio="16:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.views.YouTubePlayerSeekBar
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:fontSize="12sp"
-        android:id="@+id/video_seekbar"
-        app:layout_constraintBottom_toBottomOf="@+id/demo_video"
-        app:layout_constraintEnd_toEndOf="@+id/demo_video"
-        app:layout_constraintStart_toStartOf="@+id/demo_video" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:showFullScreenButton="false"
+        app:showVideoCurrentTime="true"
+        app:showYouTubeButton="true"
+        app:videoId="F1F2imiOJfk" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/question_recycle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/demo_video"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:layout_constraintTop_toBottomOf="@+id/demo_video" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submit"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/lock"
+        app:icon="@drawable/ic_round_lock_open_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
