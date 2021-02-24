@@ -22,6 +22,11 @@ fun TextView.setAttendees(string: Int) {
     text = string.toString() + " Attendees"
 }
 
+@BindingAdapter("setClassid")
+fun TextView.setClassid(string: Int) {
+    text = "Class: " + string.toString()
+}
+
 @BindingAdapter("setRank")
 fun TextView.setRank(ine: Int){
     text = ine.toString()

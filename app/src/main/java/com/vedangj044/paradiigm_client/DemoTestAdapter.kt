@@ -165,7 +165,7 @@ class DemoTestAdapter(var mDataset: List<QuestionDemo>): RecyclerView.Adapter<Re
         return mDataset.size
     }
 
-    private class FillBlanksViewHolder(private val view: View): RecyclerView.ViewHolder(view){
+    private inner class FillBlanksViewHolder(private val view: View): RecyclerView.ViewHolder(view){
 
         val text: TextView = view.findViewById(R.id.question_text_test)
         val option1: TextView = view.findViewById(R.id.option_1_text_test)

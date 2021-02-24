@@ -43,66 +43,14 @@
                 tools:text="___ is an operating system ?  is an operating system ?" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/option_1_testtf"
-                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                android:id="@+id/materialTextView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/question_text_testtf" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/option_1_text_testtf"
-                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="@string/true1"
-                app:layout_constraintBaseline_toBaselineOf="@id/option_1_testtf"
-                app:layout_constraintStart_toEndOf="@id/option_1_testtf" />
-
-            <ImageView
-                android:id="@+id/option_1_check_testtf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:contentDescription="@string/tick"
-                android:src="@drawable/ic_baseline_check_circle_24"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@id/option_1_testtf"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/option_2_testtf"
-                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="@string/_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/option_1_text_testtf" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/option_2_text_testtf"
-                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="@string/false1"
-                app:layout_constraintBaseline_toBaselineOf="@id/option_2_testtf"
-                app:layout_constraintStart_toEndOf="@id/option_2_testtf" />
-
-            <ImageView
-                android:id="@+id/option_2_check_testtf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:contentDescription="@string/tick"
-                android:src="@drawable/ic_baseline_check_circle_24"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@id/option_2_testtf"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:layout_marginTop="8dp"
+                android:text="23"
+                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                app:layout_constraintStart_toStartOf="@+id/question_text_testtf"
+                app:layout_constraintTop_toBottomOf="@+id/question_text_testtf" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/your_andwer"
@@ -113,7 +61,7 @@
                 android:text="@string/your_answer"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/option_2_testtf" />
+                app:layout_constraintTop_toBottomOf="@+id/materialTextView3" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/materialTextView2"
@@ -131,4 +79,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

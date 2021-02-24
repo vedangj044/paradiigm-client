@@ -14,10 +14,6 @@ class BasicInfoViewModel(private val basicInfoApiService: Retrofit, private val 
 
     val sendObj = MutableLiveData<BasicInfo>()
 
-    init {
-        getData()
-    }
-
     fun getData() {
 
         viewModelScope.launch {

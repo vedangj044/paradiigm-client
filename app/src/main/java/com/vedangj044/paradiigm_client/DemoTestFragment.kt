@@ -60,6 +60,7 @@ class DemoTestFragment(private val classID: Int, private val studentID: Int): Fr
 
         viewModel.questions.observe(this, Observer {
             adapter.mDataset = it.question
+            questionRecycle.layoutManager?.removeAllViews()
             adapter.notifyDataSetChanged()
 
             submitButton.icon = context?.applicationContext?.let { it1 -> ContextCompat.getDrawable(it1, R.drawable.ic_round_lock_open_24) }
@@ -108,15 +109,15 @@ class DemoTestFragment(private val classID: Int, private val studentID: Int): Fr
         override fun onCurrentSecond(youTubePlayer: YouTubePlayer, second: Float) {
 
             when (second.toInt()) {
-//                180 -> {
-//                    if (d1){
-//                        demoViewModel.generateQuestion(1)
-//                        Log.v("demo", "Generated question set 1")
-//                        d1 = false
-//                    }
-//
-//                }
-                10 -> {
+                125 -> {
+                    if (d1){
+                        demoViewModel.generateQuestion(1)
+                        Log.v("demo", "Generated question set 1")
+                        d1 = false
+                    }
+
+                }
+                250 -> {
                     if (d2) {
                         demoViewModel.getQuestion()
                         Log.v("demo", "Get lateset question set 1")
@@ -124,7 +125,7 @@ class DemoTestFragment(private val classID: Int, private val studentID: Int): Fr
                     }
 
                 }
-                420 -> {
+                350 -> {
                     if (d3){
                         demoViewModel.generateQuestion(0)
                         Log.v("demo", "Generated question set 2")
@@ -132,7 +133,7 @@ class DemoTestFragment(private val classID: Int, private val studentID: Int): Fr
                     }
 
                 }
-                450 -> {
+                420 -> {
                     if (d4){
                         demoViewModel.getQuestion()
                         Log.v("demo", "Get latest question set 2")

@@ -8,9 +8,8 @@ import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import kotlin.reflect.jvm.internal.impl.name.ClassId
 
-class TestReviewViewModel(private val  basicInfoApiService: Retrofit, private val classId: Int): ViewModel() {
+class TestReviewViewModel(private val  basicInfoApiService: Retrofit, private val classId: Int, private val studentID: Int): ViewModel() {
 
-    val studentID = 1
     val sendObj = MutableLiveData<TestReview>()
 
     init {

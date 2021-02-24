@@ -166,6 +166,26 @@
                 app:layout_constraintBottom_toBottomOf="@id/option_4_test"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/your_andwer"
+                style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/your_answer"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/option_4_test" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView2"
+                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/your_andwer"
+                app:layout_constraintStart_toEndOf="@id/your_andwer" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

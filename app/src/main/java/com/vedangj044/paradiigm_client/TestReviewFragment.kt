@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.vedangj044.paradiigm_client.databinding.LayoutReviewBinding
 
-class TestReviewFragment(private val classID: Int): Fragment() {
+class TestReviewFragment(private val classID: Int, private val studentID: Int): Fragment() {
 
     private lateinit var testReviewViewModel: TestReviewViewModel
     private lateinit var history: LayoutReviewBinding
@@ -31,7 +31,7 @@ class TestReviewFragment(private val classID: Int): Fragment() {
 
         testReviewViewModel = ViewModelProvider(
             this,
-           TestReviewViewModelFactory(BasicInfoApiService.getApiService(), classID)
+           TestReviewViewModelFactory(BasicInfoApiService.getApiService(), classID, studentID)
         )[TestReviewViewModel::class.java]
 
         testReviewViewModel.sendObj.observe(this, Observer {

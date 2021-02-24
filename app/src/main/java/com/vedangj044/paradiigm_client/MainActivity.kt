@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 binding.activeRecycler.adapter = activeAdapter
 
                 scoreAdapter = ScoreClassAdapter(value.history){
-                    val hf = TestReviewFragment(it.classID)
+                    val hf = TestReviewFragment(it.classID, studentid)
                     supportFragmentManager.beginTransaction().replace(android.R.id.content, hf, "Test Review").addToBackStack("review").commit()
                 }
                 binding.scoreboardRecycler.adapter = scoreAdapter
@@ -68,6 +68,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        basicInfoViewModel.getData()
     }
 
     private fun setupViewModel() {
