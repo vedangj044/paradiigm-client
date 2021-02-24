@@ -1,5 +1,6 @@
 package com.vedangj044.paradiigm_client
 
+import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,11 +8,10 @@ import androidx.lifecycle.viewModelScope
 import com.vedangj044.paradiigm_client.models.BasicInfo
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
-import kotlin.coroutines.CoroutineContext
 
-class BasicInfoViewModel(private val basicInfoApiService: Retrofit): ViewModel() {
 
-    val studentID: Int = 1
+class BasicInfoViewModel(private val basicInfoApiService: Retrofit, private val studentID: Int): ViewModel() {
+
     val sendObj = MutableLiveData<BasicInfo>()
 
     init {

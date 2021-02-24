@@ -2,10 +2,7 @@ package com.vedangj044.paradiigm_client
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.vedangj044.paradiigm_client.models.BasicInfo
-import com.vedangj044.paradiigm_client.models.Enroll
-import com.vedangj044.paradiigm_client.models.QuestionTest
-import com.vedangj044.paradiigm_client.models.TestReview
+import com.vedangj044.paradiigm_client.models.*
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -18,8 +15,14 @@ import retrofit2.http.Query
 interface BasicInfoApiService {
 
     @Headers("Accept: application/json")
-    @GET("basicinfo")
+    @GET("basicinfodemo")
     suspend fun getBasicInfo(@Query("studntID") studentID: Int): Response<BasicInfo>
+
+    @GET("questionset")
+    suspend fun getQuestionSet(@Query("classID") classID: Int, @Query("set1") set: Int)
+
+    @GET("stopclass")
+    suspend fun endClass(@Query("classID") classID: Int)
 
     @Headers("Accept: application/json")
     @GET("testreview")
@@ -27,7 +30,7 @@ interface BasicInfoApiService {
 
     @Headers("Accept: application/json")
     @GET("getquestion")
-    suspend fun getLastQuestion(@Query("classID") classID: Int, @Query("studentID") studentID: Int): Response<QuestionTest>
+    suspend fun getLastQuestion(@Query("classID") classID: Int, @Query("studentID") studentID: Int): Response<QuestionDemoList>
 
     @Headers("Accept: application/json")
     @GET("enrollclass")
